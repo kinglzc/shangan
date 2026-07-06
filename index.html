@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考研上岸概率计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 考研上岸概率计算器</h1>
+            <p class="subtitle">基于客观条件与主观能动性的双维度评估模型</p>
+        </header>
+
+        <!-- 客观条件 -->
+        <section class="card" id="objective-section">
+            <div class="section-header">
+                <h2>📊 一、客观条件</h2>
+            </div>
+            <p class="section-desc">以下 8 个维度反映你的客观基础条件，请根据实际情况选择。</p>
+            <div class="form-grid" id="objective-form">
+                <!-- JS 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 主观能动性 -->
+        <section class="card" id="subjective-section">
+            <div class="section-header">
+                <h2>💪 二、主观能动性</h2>
+            </div>
+            <p class="section-desc">以下 4 个维度反映你的复习状态与努力程度。</p>
+            <div class="form-grid" id="subjective-form">
+                <!-- JS 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 生成按钮 -->
+        <div class="generate-btn-wrapper">
+            <button class="btn btn-generate" id="btn-generate" disabled>
+                <span class="btn-text">🎯 生成我的上岸概率</span>
+                <span class="btn-loading" style="display:none;">⏳ 计算中...</span>
+            </button>
+        </div>
+
+        <!-- 最终结果 -->
+        <section class="card result-card" id="result-section" style="display:none;">
+            <h2>🎯 你的上岸概率</h2>
+            <div class="result-display">
+                <div class="probability-gauge">
+                    <svg viewBox="0 0 200 200" class="gauge-svg">
+                        <circle cx="100" cy="100" r="85" class="gauge-bg" />
+                        <circle cx="100" cy="100" r="85" class="gauge-fill" id="gauge-fill" />
+                        <text x="100" y="108" class="gauge-value" id="gauge-text" text-anchor="middle">—</text>
+                        <text x="100" y="135" class="gauge-label" text-anchor="middle">上岸概率</text>
+                    </svg>
+                </div>
+                <div class="result-info">
+                    <div class="result-status" id="result-status">—</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 建议 -->
+        <section class="card ai-section" id="ai-section" style="display:none;">
+            <div class="section-header">
+                <h2>🤖 AI 备考建议</h2>
+            </div>
+            <div class="ai-loading" id="ai-loading" style="display:none;">
+                <div class="ai-loading-spinner"></div>
+                <p>AI 正在分析你的情况，请稍候...</p>
+            </div>
+            <div class="ai-result" id="ai-result" style="display:none;">
+                <div class="ai-result-header">
+                    <h3>💡 针对你的建议</h3>
+                    <button class="btn btn-copy" id="btn-copy">复制</button>
+                </div>
+                <div class="ai-result-content" id="ai-result-content"></div>
+            </div>
+            <!-- AI 离线备用：复制提示词 + 打开 DeepSeek -->
+            <div class="ai-fallback" id="ai-fallback" style="display:none;">
+                <p class="ai-fallback-tip">AI 建议服务暂时不可用，你可以一键复制分析提示词，打开 DeepSeek 粘贴获取建议：</p>
+                <div class="ai-fallback-btns">
+                    <button class="btn btn-copy-prompt" id="btn-copy-prompt">📋 复制分析提示词</button>
+                    <a href="https://chat.deepseek.com" target="_blank" class="btn btn-open-ai">🔗 打开 DeepSeek</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>⚠️ 本工具仅供参考，概率模型基于加权评估，实际结果取决于个人努力与临场发挥。</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
