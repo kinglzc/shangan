@@ -54,8 +54,8 @@ const OBJECTIVE_DIMS = [
         label: '目标类型',
         weight: 5,
         options: [
-            { label: '专硕', score: 1 },
-            { label: '学硕', score: 3 },
+            { label: '专硕', score: 2 },
+            { label: '学硕', score: 5 },
         ]
     },
     {
@@ -63,8 +63,8 @@ const OBJECTIVE_DIMS = [
         label: '目标科室',
         weight: 5,
         options: [
-            { label: '修复(学硕)/黏膜/预防/病理/基础/影像/医技', score: 3 },
-            { label: '口内/口外/正畸/修复(专硕)', score: 1 },
+            { label: '修复(学硕)/黏膜/预防/病理/基础/影像/医技', score: 5 },
+            { label: '口内/口外/正畸/修复(专硕)', score: 2 },
         ]
     },
     {
@@ -143,7 +143,7 @@ const SUBJECTIVE_DIMS = [
     },
 ];
 
-const OBJ_MAX = 111;
+const OBJ_MAX = 131;
 
 // 检测是否有后端 API（本地开发环境有，部署后无）
 const API_BASE = (() => {
